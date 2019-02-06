@@ -13,5 +13,18 @@ namespace TravelApp
         {
             InitializeComponent();
         }
+
+        private void LoginBtn_Clicked(object sender, EventArgs e)
+        {
+            bool emptyEmail = string.IsNullOrEmpty(emailTB.Text);
+            bool emptyPassword = string.IsNullOrEmpty(passwordTB.Text);
+
+            if (emptyEmail || emptyPassword)
+            { }
+            else
+            {
+                Navigation.PushAsync(new HomePage());
+            }
+        }
     }
 }

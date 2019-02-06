@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TravelApp.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="redColor">#FF5A60</Color>
 
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource redColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
