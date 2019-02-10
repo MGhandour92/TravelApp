@@ -21,11 +21,15 @@ namespace TravelApp.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            //Enable maps initialization
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
+
             //Name and set the path for the DB
             string dbName = "travel_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);
 
+            //Load app with database location
             LoadApplication(new App(fullPath));
         }
     }

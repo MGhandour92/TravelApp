@@ -25,6 +25,9 @@ namespace TravelApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+            //Enable maps initialization
+            Xamarin.FormsMaps.Init();
+
             //Name and set the path for the DB
             string dbName = "travel_db.sqlite";
             string folderPath = Path.Combine(
@@ -32,6 +35,7 @@ namespace TravelApp.iOS
                                         "..", "Library");
             string fullPath = Path.Combine(folderPath, dbName);
 
+            //Load app with database location
             LoadApplication(new App(fullPath));
 
             return base.FinishedLaunching(app, options);
