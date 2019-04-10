@@ -5,9 +5,9 @@
              x:Class="TravelApp.MainPage">
 
     <StackLayout VerticalOptions="Center" Margin="20">
-        <Entry x:Name="emailTB" Placeholder="Email Address" Keyboard="Email"/>
+        <Entry x:Name="emailTB" Placeholder="Email Address" Text="test" Keyboard="Email"/>
 
-        <Entry x:Name="passwordTB" Placeholder="Password" IsPassword="True"/>
+        <Entry x:Name="passwordTB" Placeholder="Password" Text="test" IsPassword="True"/>
 
         <Button x:Name="loginBtn" Text="Login"
                 Margin="0,40,0,0" Style="{StaticResource buttonStyle}"

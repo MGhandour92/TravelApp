@@ -1,12 +1,10 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using System.IO;
+using Plugin.Permissions;
+using Plugin.CurrentActivity;
 
 namespace TravelApp.Droid
 {
@@ -21,6 +19,8 @@ namespace TravelApp.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
             //Enable maps initialization
             Xamarin.FormsMaps.Init(this, savedInstanceState);
 
@@ -31,6 +31,13 @@ namespace TravelApp.Droid
 
             //Load app with database location
             LoadApplication(new App(fullPath));
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions,
+            [GeneratedEnum] Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
