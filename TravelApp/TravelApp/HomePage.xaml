@@ -4,9 +4,9 @@
               xmlns:local="clr-namespace:TravelApp"
                x:Class="TravelApp.HomePage">
     <TabbedPage.ToolbarItems>
-        <ToolbarItem x:Name="addBtn" Text="+" Clicked="AddBtn_Clicked" />
+        <ToolbarItem x:Name="addBtn" Icon="add.png" Text="Add" Clicked="AddBtn_Clicked" />
     </TabbedPage.ToolbarItems>
-    <local:HistoryPage Title="History"/>
-    <local:MapPage Title="Map"/>
-    <local:ProfilePage Title="Profile"/>
+    <local:HistoryPage Title="History" Icon="home.png"/>
+    <local:MapPage Title="Map" Icon="map.png"/>
+    <local:ProfilePage Title="Profile" Icon="user.png"/>
 </TabbedPage>

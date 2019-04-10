@@ -5,6 +5,9 @@
              x:Class="TravelApp.MainPage">
 
     <StackLayout VerticalOptions="Center" Margin="20">
+
+        <Image x:Name="logoImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand" HeightRequest="100" Margin="0,0,0,20" />
+
         <Entry x:Name="emailTB" Placeholder="Email Address" Text="test" Keyboard="Email"/>
 
         <Entry x:Name="passwordTB" Placeholder="Password" Text="test" IsPassword="True"/>

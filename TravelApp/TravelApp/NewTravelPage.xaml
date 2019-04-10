@@ -4,7 +4,7 @@
              x:Class="TravelApp.NewTravelPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="saveBtn" Text="Save"
+        <ToolbarItem x:Name="saveBtn" Text="Save" Icon="save.png"
                      Clicked="SaveBtn_Clicked"/>
     </ContentPage.ToolbarItems>
 
