@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TravelApp.ProfilePage">
-        <StackLayout Margin="20,40,20,0">
-            <Label x:Name="postCountLbl"  HorizontalOptions="Center" Text="--"
+    <StackLayout Margin="20,40,20,0">
+        <Label x:Name="postCountLbl"  HorizontalOptions="Center" Text="--"
                    TextColor="DodgerBlue" FontAttributes="Bold"/>
 
         <Label Text="Posts"  HorizontalOptions="Center"
@@ -12,9 +12,7 @@
         <ListView x:Name="categLV">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        
-                    </ViewCell>
+                    <TextCell Text="{Binding Path=Key}" Detail="{Binding Path=Value}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

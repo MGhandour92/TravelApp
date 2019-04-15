@@ -15,6 +15,8 @@
         <Button x:Name="loginBtn" Text="Login"
                 Margin="0,40,0,0" Style="{StaticResource buttonStyle}"
                 Clicked="LoginBtn_Clicked"/>
+
+        <Button x:Name="registerUserBtn" Text="Register" HorizontalOptions="End" Clicked="RegisterUserBtn_Clicked" />
     </StackLayout>
 
 </ContentPage>

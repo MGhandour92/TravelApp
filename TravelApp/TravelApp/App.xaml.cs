@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using TravelApp.Model;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -7,6 +8,8 @@ namespace TravelApp
     public partial class App : Application
     {
         public static string DatabaseLocation = string.Empty;
+
+        public static User currentUser = new User();
 
         public App()
         {

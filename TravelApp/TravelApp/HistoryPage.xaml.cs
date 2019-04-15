@@ -19,21 +19,9 @@ namespace TravelApp
         {
             base.OnAppearing();
 
-            //Read Database
-            //Create Connection
-            //Using statement because it implments IDisposable, and to avoid forgetting to close connection
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            {
-                //Create or Replace the table
-                //To overcome exceptions when user first open this page before inserting
-                conn.CreateTable<Post>();
-
-                //Select Records from the table
-                var postList = conn.Table<Post>().ToList();
-
-                //Bind the Listview with the returned list
-                postLV.ItemsSource = postList;
-            }//No need to close connection, as we use Using statment
+            //Bind the Listview with the returned list
+            var posts = Post.GetPosts();
+            postLV.ItemsSource = posts;
         }
     }
 }

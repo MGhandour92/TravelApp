@@ -33,17 +33,8 @@ namespace TravelApp
 
             MyMap.MoveToRegion(span);
 
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            {
-                //Create or Replace the table
-                //To overcome exceptions when user first open this page before inserting
-                conn.CreateTable<Post>();
-
-                //Select Records from the table
-                var postList = conn.Table<Post>().ToList();
-
-                DisplayInMap(postList);
-            }
+            var postList = Post.GetPosts();
+            DisplayInMap(postList);
         }
 
         protected override async void OnDisappearing()

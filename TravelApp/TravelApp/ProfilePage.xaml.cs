@@ -10,24 +10,23 @@ using Xamarin.Forms.Xaml;
 
 namespace TravelApp
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProfilePage : ContentPage
-	{
-		public ProfilePage ()
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ProfilePage : ContentPage
+    {
+        public ProfilePage()
+        {
+            InitializeComponent();
+        }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            {
-                var postTable = conn.Table<Post>().ToList();
+            var postTable = Post.GetPosts();
 
-                postCountLbl.Text = postTable.Count().ToString();
-            }
+            categLV.ItemsSource = Post.PostCategories(postTable);
+
+            postCountLbl.Text = postTable.Count().ToString();
         }
     }
 }

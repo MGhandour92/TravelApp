@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelApp.Model;
 using Xamarin.Forms;
 
 namespace TravelApp
@@ -21,15 +22,17 @@ namespace TravelApp
 
         private void LoginBtn_Clicked(object sender, EventArgs e)
         {
-            bool emptyEmail = string.IsNullOrEmpty(emailTB.Text);
-            bool emptyPassword = string.IsNullOrEmpty(passwordTB.Text);
+            bool userLogin = User.Login(emailTB.Text, passwordTB.Text);
 
-            if (emptyEmail || emptyPassword)
-            { }
-            else
-            {
+            if (userLogin)
                 Navigation.PushAsync(new HomePage());
-            }
+            else
+                DisplayAlert("Error", "Email or Password is wrong", "Ok");
+        }
+
+        private void RegisterUserBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
         }
     }
 }
