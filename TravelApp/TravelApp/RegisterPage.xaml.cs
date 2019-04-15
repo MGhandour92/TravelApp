@@ -25,12 +25,6 @@ namespace TravelApp
         {
             if (passwordTB.Text == confirmPasswordTB.Text)
             {
-                User user = new User
-                {
-                    Email = emailTB.Text,
-                    Password = passwordTB.Text
-                };
-
                 int rowsInserted = User.Insert(user);
 
                 if (rowsInserted > 0)

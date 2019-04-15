@@ -14,9 +14,12 @@ namespace TravelApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewTravelPage : ContentPage
     {
+        Post post;
         public NewTravelPage()
         {
             InitializeComponent();
+            post = new Post();
+            containerSL.BindingContext = post;
         }
 
         protected override async void OnAppearing()
@@ -43,19 +46,15 @@ namespace TravelApp
                     var selectedCateg = selectedVenue.categories.FirstOrDefault();
 
                     //Set props in model object
-                    Post post = new Post()
-                    {
-                        Experience = experienceTB.Text,
-                        CategoryId = selectedCateg.id,
-                        CategoryName = selectedCateg.name,
-                        Address = selectedVenue.location.address,
 
-                        Distance = selectedVenue.location.distance,
-                        Longtitude = selectedVenue.location.lng,
-                        Latitude = selectedVenue.location.lat,
-                        VenueName = selectedVenue.name,
-                        UserId = App.currentUser.Id
-                    };
+                    post.CategoryId = selectedCateg.id;
+                    post.CategoryName = selectedCateg.name;
+                    post.Address = selectedVenue.location.address;
+                    post.Distance = selectedVenue.location.distance;
+                    post.Longtitude = selectedVenue.location.lng;
+                    post.Latitude = selectedVenue.location.lat;
+                    post.VenueName = selectedVenue.name;
+                    post.UserId = App.currentUser.Id;
 
                     int rowsInserted = Post.Insert(post);
 
